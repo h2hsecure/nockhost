@@ -1,0 +1,5 @@
+i-A PREROUTING -m set --match-set nockhost src -j vm_redirects
+-A vm_redirects -p tcp -m tcp --dport 2222 -j DNAT --to-destination 10.0.3.10:22
+-A vm_redirects -p tcp -m tcp --dport 2223 -j DNAT --to-destination 10.0.3.20:22
+-A vm_redirects -p tcp -m tcp --dport 2224 -j DNAT --to-destination 10.0.3.30:22
+-A vm_redirects -p tcp -m tcp --dport 2225 -j DNAT --to-destination 10.0.3.40:22
